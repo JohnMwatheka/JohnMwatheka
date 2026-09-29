@@ -9,9 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.19.16",
+    "framer-motion": "^13.4.5",
     "next": "16.3.7",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

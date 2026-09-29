@@ -1,26 +1,61 @@
+/*app/globals.css */
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F5F5F7;
+  --primary: #1D1D1F;
+  --secondary: #AAAAAA;
+
+  --shadow-light: rgba(255, 255, 255, 0.9);
+  --shadow-dark: rgba(0, 0, 0, 0.12);
+  --shadow-inset-light: rgba(255, 255, 255, 0.8);
+  --shadow-inset-dark: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --background: #121214;
+  --primary: #F5F5F7;
+  --secondary: #777777;
+
+  --shadow-light: rgba(255, 255, 255, 0.07);
+  --shadow-dark: rgba(0, 0, 0, 0.55);
+  --shadow-inset-light: rgba(255, 255, 255, 0.05);
+  --shadow-inset-dark: rgba(0, 0, 0, 0.6);
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--primary);
+  font-family: var(--font-jetbrains-mono), monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Raised surface — more noticeable */
+.raised {
+  box-shadow:
+    -8px -8px 18px var(--shadow-light),
+    8px 8px 18px var(--shadow-dark);
+}
+
+/* Recessed / inset surface */
+.recessed {
+  box-shadow:
+    inset -6px -6px 14px var(--shadow-inset-light),
+    inset 6px 6px 14px var(--shadow-inset-dark);
+}
+
+/* Pressed state */
+.pressed {
+  box-shadow:
+    inset -3px -3px 8px var(--shadow-inset-light),
+    inset 3px 3px 8px var(--shadow-inset-dark);
 }
